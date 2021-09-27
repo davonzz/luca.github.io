@@ -60,7 +60,7 @@
 }
 /* menu btn styling */
 .menu-btn{
-    color: rgb(240, 16, 16);
+    color: #fff(240, 16, 16);
     font-size: 23px;
     cursor: pointer;
     display: none;
@@ -115,6 +115,32 @@
     color: #fff;
     background-color: black;
 }
+
+/* about styling */
+section{
+    padding: 100px 0;
+}
+.about{
+    font-family: 'Poppins', sans-serif;
+}
+.about .tittle{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    font-family: 'Ubuntu', sans-serif;
+}
+.about .about-content .left img{
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+}
+
+
+
+
+
+
+
 /* responsive media query start*/
 @media (max-width: 1104px){
     .home .max-width{
@@ -162,6 +188,10 @@
     .home .home-content .text-3{
         font-size: 35px;
     }
+    .home .home-content a{
+        font-size: 23px;
+        padding: 10px 30px;
+    }
 }
 @media (max-width: 690px){
     .max-width{
@@ -172,6 +202,9 @@
     }
     .home .home-content .text-3{
         font-size: 32px;
+    }
+    .home .home-content a{
+        font-size: 20px;
     }
 }
 @media (max-width: 500px){
