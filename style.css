@@ -1,9 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
+}
+html{
+    scroll-behavior: smooth;
 }
 .max-width{
     max-width: 1300px;
@@ -49,6 +53,7 @@
     display: inline-block;
 }
 .navbar .menu li a{
+    display: block;
     color: #fff;
     font-size: 18px;
     font-weight: 500;
@@ -65,7 +70,29 @@
     font-size: 23px;
     cursor: pointer;
     display: none;
-    transition: all 0.3s;
+}
+.scroll-up-btn{
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background: crimson;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.scroll-up-btn.show{
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
 }
 
 /* home section styling */
@@ -120,9 +147,9 @@
     border: 2px solid black;
 }
 /* about styling */
-.about .title::after{
+/*.about .title::after{
     content: "who i am";
-}
+}*/
 .about .about-content .left{
     width: 45%;
 }
@@ -172,12 +199,11 @@
 .teams .title::before{
     background: #fff;
 }
-.services .title::after,
+/*.services .title::after,
 .teams .title::after{
     background: #111;
     content: "what i provide";
-
-}
+}*/
 .services .serv-content .card{
     width: calc(33% - 20px);
     background: #222;
@@ -211,9 +237,9 @@
 }
 
 /* skills section styling*/
-.skills .title::after{
+/*.skills .title::after{
     content: "what i know";
-}
+}*/
 .skills .skills-content .column{
     width: calc(50% - 30px);
 }
@@ -283,11 +309,14 @@
 .skills-content .right .mysql::before{
     width: 70%;
 }
+.skills-content .right .money::before{
+    width: 5%;
+}
 
 /* teams section styling*/
-.teams .title::after{
-    content: "do -/n't";
-}
+/*.teams .title::after{
+    content: "";
+}*/
 .teams .carousel .card {
     background: #222;
     border-radius: 6px;
@@ -347,9 +376,9 @@
 }
 
 /* contact section styling*/
-.contact .title::after{
-    content: "get in touch"
-}
+/*.contact .title::after{
+    content: "with me"
+}*/
 .contact .contact-content .column{
     width: calc(50% - 30px);
 }
@@ -398,9 +427,9 @@
 .contact .right form .name{
     margin-right: 10px;
 }
-.contact .right form .email{
+/*.contact .right form .email{
     margin-left: 10px;
-}
+}*/
 .contact .right form .field input,
 .contact .right form .textarea textarea{
     height: 100%;
@@ -442,11 +471,15 @@ footer{
     padding: 20px 23px;
     color: #fff;
 }
-footer span{
+footer span a{
     color: crimson;
+    text-decoration: none;
+}
+footer span a:hover{
+    text-decoration: underline;
 }
 /* all similar content styling code */
-.about, .services, .skills, .teams, .contact, .footer{
+.about, .services, .skills, .teams, .contact, footer{
     font-family: 'Poppins', sans-serif;
 }
 .about .about-content,
@@ -473,7 +506,7 @@ section .title{
 section .title::before{
     content: "";
     position: absolute;
-    bottom: -7px;
+    bottom: 1px;
     left: 50%;
     width: 180px;
     height: 3px;
